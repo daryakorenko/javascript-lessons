@@ -1,0 +1,30 @@
+/* Стили для красивой нумерации вложенных списков */
+/* 1-й уровень */
+ol {
+	counter-reset: num;
+  padding-left: 18px;
+}
+ol li {
+	counter-increment: num;
+  padding: 2px 0;
+}
+ol li::before {
+	content: counter(num) '.';
+}
+ol li {
+  list-style-type: none;
+}
+ol li::before {
+  padding: 0 6px 0 0;
+}
+ 
+/* 2-й уровень */
+ol ol {
+	counter-reset: num2;
+}
+ol ol > li {
+	counter-increment: num2;
+}
+ol ol > li::before {
+	content: counter(num) '.' counter(num2) '.';
+}
