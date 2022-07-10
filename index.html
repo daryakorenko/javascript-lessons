@@ -18,7 +18,9 @@
       </li>
       <li>CSS свойства
         <ol>
-          <li>...</li>
+          <li><a href="#selector">Селекторы</a></li>
+          <li><a href="#background">Фон и границы</a></li>
+          <li><a href="#font">Текст и шрифт</a><li>
         </ol>
       </li>
       <li>JavaScript
@@ -102,6 +104,8 @@
     <pre>table thead tbody tr td</pre>
     
     <h3 id="forms">Формы</h3>
+    <p>Тег button создает кнопку.</p>
+    <button onclick="showMyCatInfo()">Показать инфу о кошке</button>
     <pre>form input label button select option textarea</pre>
 
     <h3 id="attributes">Аттрибуты HTML-тегов</h3>
@@ -125,19 +129,45 @@
 
 
     <h2>CSS свойства</h2>
+    <h3 id="selector">Селекторы</h3>
+    <p>С помощью селекторов мы выбираем к каим элементам на странице будут применены правила/стили CSS.
+    </p>
+    <pre>.purple - выберет все элементы с классом purple
+#title - выберет все элементы с id='title"
+h1 - выберет все заголовки первого уровня
+a[target="_blank"] - выберет все ссылки с аттрибутом target равным "_blank"
+    </pre>
     <p>
       CSS-стили можно записать как в отдельный файл, так и в аттрибут конкретного элемента. 
     </p>
     <pre>селектор {
   свойство: значение свойства;
 }</pre>
-    <h3>Фон и границы</h3>
+    <h3 id="background">Фон и границы</h3>
     <p>
       background-color - задает цвет фона элемента.
     </p>
 
-    <h3>Текст и шрифт</h3>
+    <h3 id="font">Текст и шрифт</h3>
+    <p>
+      color - задает цвет текста в элементе. 
+    </p>
 
     <h2>JavaScript</h2>
+    <p>
+      Для объявления переменных используются ключевые слова <b>let</b> и <b>const</b>. Знак = - это оператор присваивания.
+    </p>
+    <pre><span class="purple">let</span> fox = 'Alisa';
+<span class="purple">const</span> dog = 'Dmitriy';</pre>
+    <h3>Функции</h3>
+    <pre>
+<span class="grey">// классическая функция</span>
+<span class="purple">function</span> helloFunction(){
+    console.log('Привет, я функция!'); 
+}
+
+<span class="grey">// стрелочная функция</span>
+let helloFunction = () => console.log('Привет, я функция!');</pre>
+
   </body>
 </html>
