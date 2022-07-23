@@ -10,9 +10,9 @@ pre {
 .grey {
   color: grey;
 }
-h1, h2, h3 {
+/* h1, h2, h3 {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 #title {
   color:dodgerblue;
 }
@@ -21,4 +21,31 @@ a:visited {
 }
 a:hover {
   color: salmon;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Стили для табличек */
+table {
+  width: 400px;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+
+thead {
+  font-weight: bold;
+}
+td, th {
+  border: 1px solid plum;
+}
+
+/* Формы */
+form {
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 0 0 0 12px;
+}
+input {
+  margin-bottom: 8px;
 }

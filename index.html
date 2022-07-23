@@ -5,6 +5,9 @@
     <link href="styles.css" rel="stylesheet" />
     <link href="nestedlist.css" rel="stylesheet" />
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1 id="title">Учеба Дарьи Коренко</h1>
@@ -31,6 +34,18 @@
     </ol>
 
     <h2>НTML теги</h2>
+    <pre>
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Darya Uchit JS&lt;/title&gt;
+    &lt;link href="styles.css" rel="stylesheet" /&gt;
+    &lt;script src="script.js" defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  Здесь будет мой сайт
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
     <p>
       Теги от <b>&lt;h1&gt;</b> до <b>&lt;h6&gt;</b> <i>(heading)</i> создают заголовки разного уровня (размера). Как правило на странице только один заголовок первого уровня.
     </p>
@@ -101,12 +116,102 @@
     </p>
     
     <h3 id="tables">Таблицы</h3>
-    <pre>table thead tbody tr td</pre>
+    <table>
+      <tr>
+        <th>Я - th</th>
+        <td>Я ячейка</td>
+        <td>Я ячейка</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td rowspan="2">rowspan="2"</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>В</td>
+      </tr>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <td>Я ячейка</td>
+          <td>Я ячейка</td>
+          <td>Я ячейка</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td colspan="2">colspan="2"</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Тег <b>&lt;table&gt;</b> создает таблицу.</p>
+    <p>Тег <b>&lt;tr&gt;</b> определяет строку таблицы (table row).</p>
+    <p>Тег <b>&lt;td&gt;</b> опредляет ячейку.</p>
+    <p>Тег <b>&lt;thead&gt;</b> опредляет заглавие таблицы.</p>
+    <p>Тег <b>&lt;tbody&gt;</b> опредляет тело таблицы.</p>
+    <p>Тег <b>&lt;th&gt;</b> опредляет заглавную ячейку (типа как будто она из thead). По умолчанию текст внутри будет полужирный и выровнен по-центру.</p>
+
+    <p>
+      <b>colspan="X"</b> - аттурибут тега td, предлагает ячейке занять Х столбцов.
+      <br><b>rowspan="X"</b> - аттурибут тега td, предлагает ячейке занять Х строк.
+    </p>
     
     <h3 id="forms">Формы</h3>
-    <p>Тег button создает кнопку.</p>
+    <form action="/api/v1/order/create" method="post">
+      <h4>Форма для примера</h4>
+      <label for="inputOne">Введите текст</label>
+      <input id="inputOne" type="text" name="someText" minlength="2" maxlength="10" placeholder="Я - плейсхолдер">
+      <br>
+      <label>Введите число</label>
+      <input id="inputTwo" type="number" name="someNumbers" min="3" max="8">
+      <br>
+      <input id="myCheckbox1" type="checkbox" checked> 
+      <label for="myCheckbox1">Чекбокс</label>
+      <br>
+      <input type="radio">
+      <label>Radio | переключатель</label>
+      <br>
+      <input type="date">
+      <br>
+      <input type="color">
+      <br>
+      <input type="datetime-local">
+      <br>
+      <input type="file" accept=".jpg,.jpeg,.png,.gif">
+      <br>
+      <input type="password">
+      <br>
+      <input type="range">
+      <br>
+      <input type="button" value="Текст кнопки">
+      <br>
+      <input type="submit" value="Текст кнопки">
+      <br>
+      <select placeholder="Выбери уже что-нибудь">
+        <option>Сущи наверное</option>
+        <option>Писа</option>
+        <option>Вог</option>
+      </select>
+      
+      <br>
+      <textarea></textarea>
+    </form>
+
+    <p>Тег <b>&lt;form&gt;</b> создает форму, то есть область документа с интерактивными элементами и возможностью отправить данные на сервер.</p>
+    <p>Тег <b>&lt;button&gt;</b> создает кнопку.</p>
     <button onclick="showMyCatInfo()">Показать инфу о кошке</button>
     <pre>form input label button select option textarea</pre>
+    <p>Важные аттрибуты элемента <b>input</b>: type, placeholder, accept, checked, disabled, readonly, value, name, minlength, maxlength, min, max</p>
 
     <h3 id="attributes">Аттрибуты HTML-тегов</h3>
     <p>
@@ -150,7 +255,15 @@ a[target="_blank"] - выберет все ссылки с аттрибутом 
 
     <h3 id="font">Текст и шрифт</h3>
     <p>
-      color - задает цвет текста в элементе. 
+      <b>color</b> - задает цвет текста в элементе.
+      <br><b>font-family</b> - задает семейство шрифтов, принимает значения: serif (с засечками), sans-serif (без засечек) или названия семейств в кавычках через запятую. Если первое семейство не обнаружено, браузер попытается использовать следующее по списку. 
+      <br><b>font-size</b> - задает размер шрифта. Принимает значения в px, %, mm, em и rem.
+      <br><b>line-height</b> - задает высоту строки, принимает те же значения. 
+      <br><b>font-weight</b> - задает толщину начертания текста. 300 - тонкий, 400 - обычный, 500-900 - все жирнее и жирнее.
+    </p>
+
+    <p>
+      <b>white-space</b> - значение nowrap запрещает перенос строки внутри элемента.
     </p>
 
     <h2>JavaScript</h2>
