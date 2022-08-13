@@ -31,7 +31,10 @@
           <li>...</li>
         </ol>
       </li>
+      <li>Postman
+      </li>
     </ol>
+    
 
     <h2>НTML теги</h2>
     <pre>
@@ -312,7 +315,7 @@ margin-bottom: 10px;
 margin-left: 10px;
     </pre>
 
-    <p><b>box-sizing: border-box и content-box</b>
+    <p><b>box-sizing</b> принимает значения: <b>border-box или content-box</b>
       <br><b>border-box</b> - к указанной ширине и/или высоте не добавлять значения padding и/или border.
       <br><b>content-box</b> - к указанной ширине и/или высоте добавлять значения padding и/или border.
     </p>
@@ -344,6 +347,18 @@ border-color: orange;
 
 <span class="grey">// запись для отдельных сторон</span>
 border-left: 1px solid black; </pre>
+
+    <p><b>background-image</b> -задает фоновое изображение для элемента.
+    <br><b>background-repeat</b> - повторение фоновой картинки. Принимает: <b>no-repeat, repeat, repeat-x, repeat-y</b>.
+    <br><b>background-size</b> - позволяет задать размер изображению. Указывается обычно в px, %.</p>
+
+    <pre>background-image: url('http://ya.ru/logo.png');
+background-image: url('images/cat.jpg');
+background-repeat: repeat;
+background-size: по-горизонтали по-вертикали;</pre>
+
+<div style="width: 410px; height: 350px; border: 1px solid burlywood; background-image: url('images/cat.jpg');"></div>
+
     <p>
       <b>overflow</b> - позволяет решить что делать с содержимым, которое не влезло в границы элемента. Принимает значения:
     </p>
@@ -359,13 +374,23 @@ border-left: 1px solid black; </pre>
     </p>
 
     <h3 id="font">Текст и шрифт</h3>
-    <p>
-      <b>color</b> - задает цвет текста в элементе.
-      <br><b>font-family</b> - задает семейство шрифтов, принимает значения: serif (с засечками), sans-serif (без засечек) или названия семейств в кавычках через запятую. Если первое семейство не обнаружено, браузер попытается использовать следующее по списку. 
+
+    <p><b>color</b> - задает цвет текста в элементе.</p>
+     <ul>
+      <li>Английское название цвета: plum, white, salmon, red  т.д.</li>
+      <li>hex-code - шестнадцатеричный цветовой код. Записывается через # с помощью 6 цифр/6 букв/буквы+цифры. Буквы используют только A B C D E F. Пример: # e7e7e7</li>
+      <li>rgb - еще один способ записи цвета, записывается (0, 0, 0)</li>
+      <li>rgba - способ записи прозрачности цвета, (0, 0 , 0, 1), первые три цифры-это цвет, а четвертая-прозрачность.</li>
+     </ul>
+
+    <p><b>font-family</b> - задает семейство шрифтов, принимает значения: serif (с засечками), sans-serif (без засечек) или названия семейств в кавычках через запятую. Если первое семейство не обнаружено, браузер попытается использовать следующее по списку. 
       <br><b>font-size</b> - задает размер шрифта. Принимает значения в px, %, mm, em и rem.
       <br><b>line-height</b> - задает высоту строки, принимает те же значения. 
       <br><b>font-weight</b> - задает толщину начертания текста. 300 - тонкий, 400 - обычный, 500-900 - все жирнее и жирнее.
     </p>
+    <p><b>font-style</b> - позволяет выбрать курсивное начертание если выбрано значение <b>italic</b></p>
+    <p><b>text-align</b> - горизонтальное выравнивание текста. Принимает значения: left, right, center и justify.</p> 
+    <p><b>text-decoration</b> - позволяет добавить или убрать подчеркиевание текста. Принимает значение: underline и none. Дополнительно через пробел можно указать цвет.</p>
 
     <p>
       <b>white-space</b> - значение nowrap запрещает перенос строки внутри элемента.
@@ -386,6 +411,67 @@ border-left: 1px solid black; </pre>
 
 <span class="grey">// стрелочная функция</span>
 let helloFunction = () => console.log('Привет, я функция!');</pre>
+
+    <h2>Postman</h2>
+    <p><b>pm.globals</b> - обращается к списку глобальных переменных окружения (Environments -> Globals)</p>
+    <ul>
+      <li><b>pm.globals.set("moya_peremennaya", "https://api.test.ru")</b> - команда set() устанавливает значение глобальной переменной "moya_peremennaya" равное "https://api.test.ru"</li>
+      <li><b>pm.globals.get("moya_peremennaya")</b> - команда get() возвращает значение глобальной переменной "moya_peremennaya"</li>
+    </ul>
+
+    <p><b>pm.environment</b> - обращается к текущему выбранному списку переменных окружения</p>
+    <ul>
+      <li><b>pm.environment.set("moya_peremennaya", "https://api.test.ru")</b> - команда set() устанавливает значение переменной "moya_peremennaya" равное "https://api.test.ru"</li>
+      <li><b>pm.environment.get("moya_peremennaya")</b> - команда get() возвращает значение переменной "moya_peremennaya"</li>
+    </ul>
+
+    <p><b>pm.response</b> - обращается к ответу на запрос, который мы только что получили</p>
+    <ul>
+      <li><b>pm.response.json()</b> - вернет тело ответа (в формате JSON)</li>
+      <li><b>pm.response.status</b> - вернет status ответа ("OK", "Bad Request", "Not Found")</li>
+      <li><b>pm.response.code</b> - вернет code ответа (200, 400, 404)</li>
+      <li><b>pm.response.responseTime</b> - вернет время ответа в миллисекундах</li>
+      <li><b>pm.response.headers</b> - вернет headers ответа</li>
+      <li><b>pm.response.headers.get('Content-Type')</b> - вернет header ответа, под названием Content-Type</li>
+    </ul>
+
+    <p><b>pm.cookies</b> - обращается к кукам</p>
+
+    <p><b>pm.test()</b> - метод, запускающий автотест, первым аргументом принимает человекопонятное название теста, вторым - какое-то утверждение</p>
+    <pre>pm.<span class="purple">test</span>("Статус ответа - ОК", () => {
+  pm.expect(pm.response.status).to.eql("OK");
+});
+
+pm.<span class="purple">test</span>("Код ответа - 200", () => {
+  pm.expect(pm.response.code).to.eql(200);
+});
+
+pm.<span class="purple">test</span>("Логин у пользователя - admin", () => {
+  pm.expect(pm.response.json().login).to.eql("admin");
+});</pre>
+
+    <p><b>pm.expect()...</b> - метод проверки ожиданий тестировщика от каких-либо значений ответа, составляется как предложение. Используется вместе с pm.test() - смотри примеры выше.</p>
+
+    <pre>
+<span class="grey">// pm.expect(...).to.eql(...) - строго равно</span>
+pm.<span class="purple">expect</span>(pm.response.json().login)<span class="purple">.to.eql</span>('admin');
+pm.<span class="purple">expect</span>(pm.response.headers.get('Content-Type'))<span class="purple">.to.eql</span>('application/json');
+pm.<span class="purple">expect</span>(pm.response.json().name)<span class="purple">.to.eql</span>(pm.environment.get("name")); <span class="grey">- сравнение ответа с некоей переменной</span>
+
+<span class="grey">// pm.expect(...).to.have(...) - строка, массив или объект содержат соотв. значение</span>
+pm.response<span class="purple">.to.have.header</span>("Content-Type"); <span class="grey">- без expect</span>
+pm.response<span class="purple">.to.have.status</span>(400); <span class="grey">- без expect</span>
+
+<span class="grey">// pm.expect(...).to.be.oneOf([..., ...]) - является одним из массива значений</span>
+pm.<span class="purple">expect</span>(pm.response.code)<span class="purple">.to.be.oneOf</span>([201,202]); <span class="grey">- код ответа либо 201, либо 202</span>
+
+<span class="grey">// pm.expect(...).to.be.true - является true</span>
+<span class="grey">// pm.expect(...).to.be.null - является null</span>
+<span class="grey">// pm.expect(...).to.be.undefined - является undefined</span>
+<span class="grey">// pm.expect(...).to.be.an('object') - является объектом (или array, string, number)</span>
+  
+<span class="grey">// pm.expect(...).to.be.below(...) - меньше значения (above - если больше)</span>
+pm.<span class="purple">expect</span>(pm.response.responseTime)<span class="purple">.to.be.below</span>(200); <span class="grey">- время ответа в миллисекундах</span></pre>
 
   </body>
 </html>

@@ -3,6 +3,7 @@ pre {
   background-color: #444444;
   border-radius: 8px;
   color: #efefef;
+  font-size: 125%;
 }
 .purple {
   color: plum;
@@ -24,6 +25,7 @@ a:hover {
 }
 body {
   font-family: 'Open Sans', sans-serif;
+  padding-bottom: 60px;
 }
 
 /* Стили для табличек */

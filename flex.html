@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <link href="flex.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h2>CSS свойства</h2>
+    <p><b>display: flex</b> - Делает все элементы резиновыми, а не строчными или блочными.</p>
+    <p><b>flex-direction</b> - Определяет направление дочерних элементов. Принимает значения: row, row-reverse, column, column-reverse.</p>
+
+    <pre>flex-direction: row;</pre>
+    <div class="parent flex-direction-row">
+      <div class="child" style="order: 5;">Hello A</div>
+      <div class="child">Hello B</div>
+      <div class="child">Hello C</div>
+      <div class="child">Hello D</div>
+      <div class="child">Hello E</div>
+    </div>
+
+    <pre>flex-direction: row-reverse;</pre>
+    <div class="parent flex-direction-row-reverse">
+      <div class="child">Hello A</div>
+      <div class="child">Hello B</div>
+      <div class="child">Hello C</div>
+    </div>
+
+    <pre>flex-direction: column;</pre>
+    <div class="parent flex-direction-column">
+      <div class="child">Hello A</div>
+      <div class="child">Hello B</div>
+      <div class="child">Hello C</div>
+    </div>
+
+    <p><b>flex-wrap</b> - Управление многострочностью. Принимает значения: nowrap, wrap, wrap-reverse.</p>
+    <pre>flex-wrap: wrap;</pre>
+    <div class="parent flex-wrap-wrap">
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+      <div class="child">Прокрастинация</div>
+    </div> 
+
+    <p><b>order</b> - Порядок отображения flex-элементов. Свойство определяет порядок отображения и расположения элементов внутри контейнера. Значения указыватся числами. По умолчанию элементы имеют order: 0; </p>
+    <pre>order: 2;</pre>
+
+    <p><b>Гибкость flex-элементов</b></p>
+      <div class="parent flex">
+      <div class="child">Hello A</div>
+      <div class="child">Hello B</div>
+      <div class="child">Hello C</div>
+      <div class="child mama">Hello D</div>
+    </div>
+    
+    <p><b>Выравнивание по главной оси: justify-content</b>. Принимает значения: flex-start, flex-end, center, space-between, space-around. </p>
+    <pre>justify-content: flex-end;</pre>
+    <div class="parent justify-content-flex-end">
+      <div class="child">Hello A</div>
+      <div class="child">Hello B</div>
+      <div class="child">Hello C</div>
+    </div>
+
+    <p><b>Выравнивание по поперечной оси: align-items.</b> Принимает значения: flex-start, flex-end, center, baseline, stretch.
+    <pre>align-items: flex-end;</pre>
+    <div class="parent parent-tall align-items-flex-end">
+      <div class="child">Hello A</div>
+      <div class="child">Hello B</div>
+      <div class="child">Hello C</div>
+    </div>
+
+    <pre>.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}</pre>
+    <div class="parent" style="flex-direction: column; align-items: center; height: 400px; justify-content: center;">
+      <div class="child">Hello A</div>
+      <div class="child" style="align-self: flex-start;">Hello B</div>
+      <div class="child">Hello C</div>
+    </div>
+    </div>
+  </body>
+</html>
